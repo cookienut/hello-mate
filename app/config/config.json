@@ -5,9 +5,9 @@
     "debug": true
   },
   "mongo_atlas": {
-    "database": "",
+    "database": "mb_user_db",
     "username": "test",
-    "password": ""
+    "password": "test"
   },
   "logging": {
     "log_file": "D:/hello-mate/logs/rest_api.log",
