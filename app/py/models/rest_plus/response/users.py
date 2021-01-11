@@ -12,3 +12,23 @@ def get_show_model(api):
         'updated_at': fields.String(required=True, description='Updation time')
     })
     return show_model
+
+
+def get_insights_model(api):
+    """ Return insights model for response """
+    history_fields = api.model("History Model", {
+        'url': fields.String(description='Visited url'),
+        'visits': fields.Integer(description='Frequency of visits'),
+        'tags': fields.List(fields.String, description='Additional tags')
+    })
+
+    insights_model = api.model('User Insights', {
+        'uuid': fields.String(required=True, description='User UUID'),
+        'name': fields.String(required=True, description='User name'),
+        'email': fields.String(required=True, description='User email'),
+        'history': fields.List(
+            fields.Nested(history_fields),
+            required=True,
+            description='Browsing insights')
+    })
+    return insights_model

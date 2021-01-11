@@ -2,12 +2,12 @@
   "flask": {
     "host": "127.0.0.1",
     "port": "5001",
-    "debug": false
+    "debug": true
   },
   "mongo_atlas": {
-    "database": "mb_user_db",
+    "database": "",
     "username": "test",
-    "password": "test"
+    "password": ""
   },
   "logging": {
     "log_file": "D:/hello-mate/logs/rest_api.log",
